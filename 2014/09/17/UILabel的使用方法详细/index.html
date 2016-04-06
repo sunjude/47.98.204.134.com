@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS新手进阶篇,UISegmentedControl," />
+  <meta name="keywords" content="iOS新手进阶篇,UILabel," />
 
 
 
@@ -57,22 +57,31 @@
 
 
 
-<meta name="description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
+<meta name="description" content="//UILabel的使用
+ UILabel *oneLabel = [[UILabel alloc] init];
+// 最经常使用的
+oneLabel.frame = CGRectMake(0, 0, 320, 200); // 设置oneLabel的位置和大小
+oneLabel.text = @&amp;quot;我是一个UILabel哦，&amp;quot;; // 设置oneLabel显示的字
+oneLa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UISegmentedControl的使用方法详细">
-<meta property="og:url" content="http://yoursite.com/2014/09/24/UISegmentedControl的使用方法详细/index.html">
+<meta property="og:title" content="UILabel的使用方法详细">
+<meta property="og:url" content="http://yoursite.com/2014/09/17/UILabel的使用方法详细/index.html">
 <meta property="og:site_name" content="孙聚德">
-<meta property="og:description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
-<meta property="og:updated_time" content="2016-04-06T07:47:38.000Z">
+<meta property="og:description" content="//UILabel的使用
+ UILabel *oneLabel = [[UILabel alloc] init];
+// 最经常使用的
+oneLabel.frame = CGRectMake(0, 0, 320, 200); // 设置oneLabel的位置和大小
+oneLabel.text = @&amp;quot;我是一个UILabel哦，&amp;quot;; // 设置oneLabel显示的字
+oneLa">
+<meta property="og:updated_time" content="2016-04-06T07:37:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UISegmentedControl的使用方法详细">
-<meta name="twitter:description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
+<meta name="twitter:title" content="UILabel的使用方法详细">
+<meta name="twitter:description" content="//UILabel的使用
+ UILabel *oneLabel = [[UILabel alloc] init];
+// 最经常使用的
+oneLabel.frame = CGRectMake(0, 0, 320, 200); // 设置oneLabel的位置和大小
+oneLabel.text = @&amp;quot;我是一个UILabel哦，&amp;quot;; // 设置oneLabel显示的字
+oneLa">
 
 
 
@@ -90,7 +99,7 @@ UISegmentedControl *oneSegmentedControl">
   };
 </script>
 
-  <title> UISegmentedControl的使用方法详细 | 孙聚德 </title>
+  <title> UILabel的使用方法详细 | 孙聚德 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,7 +229,7 @@ UISegmentedControl *oneSegmentedControl">
             
             
               
-                UISegmentedControl的使用方法详细
+                UILabel的使用方法详细
               
             
           </h1>
@@ -232,8 +241,8 @@ UISegmentedControl *oneSegmentedControl">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-09-24T18:03:25+08:00" content="2014-09-24">
-              2014-09-24
+            <time itemprop="dateCreated" datetime="2014-09-17T17:11:59+08:00" content="2014-09-17">
+              2014-09-17
             </time>
           </span>
 
@@ -278,68 +287,63 @@ UISegmentedControl *oneSegmentedControl">
       
 
       
-        <pre><code>// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&quot;1&quot;, @&quot;2&quot;, @&quot;3&quot;, @&quot;4&quot;, nil];
-UISegmentedControl *oneSegmentedControl = [[UISegmentedControl alloc] initWithItems:oneArrayForSegmentedControl]; // 初始化时加入items
-oneSegmentedControl.frame = CGRectMake(20, 20, 280, 40);
-oneSegmentedControl.tintColor = [UIColor redColor]; // 选中的颜色
+        <pre><code>//UILabel的使用
+ UILabel *oneLabel = [[UILabel alloc] init];
+// 最经常使用的
+oneLabel.frame = CGRectMake(0, 0, 320, 200); // 设置oneLabel的位置和大小
+oneLabel.text = @&quot;我是一个UILabel哦，&quot;; // 设置oneLabel显示的字
+oneLabel.textColor = [UIColor blackColor]; // 设置字体颜色
+oneLabel.backgroundColor = [UIColor redColor]; // 设置背景色
+oneLabel.backgroundColor = [UIColor clearColor]; // 可以设置透明背景色
+oneLabel.alpha = 1.0; // 设置透明度 （范围是0.0-1.0之间）
 </code></pre><a id="more"></a>
-<pre><code>oneSegmentedControl.selectedSegmentIndex = 1; // 设置默认选中项 此处是小标，从0开始
-oneSegmentedControl.segmentedControlStyle = UISegmentedControlStylePlain; // 设置样式
-//    typedef NS_ENUM(NSInteger, UISegmentedControlStyle) {
-//        UISegmentedControlStylePlain,     // large plain
-//        UISegmentedControlStyleBordered,  // large bordered
-//        UISegmentedControlStyleBar,       // small button/nav bar style. tintable
-//        UISegmentedControlStyleBezeled,   // DEPRECATED. Do not use this style.
-//    };
-oneSegmentedControl.momentary = NO; // 设置点击后是否恢复原样, 默认是NO， 不恢复
-[oneSegmentedControl setTitle:@&quot;NO1&quot; forSegmentAtIndex:0];
-[oneSegmentedControl setTitle:@&quot;NO2&quot; forSegmentAtIndex:1];
-[oneSegmentedControl setTitle:@&quot;NO3&quot; forSegmentAtIndex:2];
-[oneSegmentedControl setTitle:@&quot;NO5&quot; forSegmentAtIndex:3]; // 根据Index设置名称
-[oneSegmentedControl setImage:[UIImage imageNamed:@&quot;bbb.png&quot;] forSegmentAtIndex:3]; // 根据索引设置
-[oneSegmentedControl insertSegmentWithTitle:@&quot;KO&quot; atIndex:2 animated:YES]; // 在指定位置插入一个，并使用动画
-[oneSegmentedControl removeSegmentAtIndex:1 animated:YES]; // 指定索引移除一个，使用动画
-[oneSegmentedControl setWidth:100 forSegmentAtIndex:1]; // 设置指定索引位置的宽度
-[oneSegmentedControl setContentOffset:CGSizeMake(5.0, -5) forSegmentAtIndex:1]; // 根据索引设置文字的位置
-NSLog(@&quot;%@&quot;, [oneSegmentedControl titleForSegmentAtIndex:0]); // 获取指定索引上显示的文字 NO1
-NSLog(@&quot;%u&quot;, oneSegmentedControl.numberOfSegments); // 获取总共有多少项
-NSLog(@&quot;%f&quot;, [oneSegmentedControl widthForSegmentAtIndex:1]); // 根据索引获取那一项的宽度
-NSLog(@&quot;%i&quot;, [oneSegmentedControl isEnabledForSegmentAtIndex:2]); // 判断索引项是否可选
-[oneSegmentedControl setEnabled:NO forSegmentAtIndex:2]; // 设置索引项不可选
+<pre><code>// 字体和字体大小
+oneLabel.font = [UIFont fontWithName:@&quot;Helvetica&quot; size:25.4f]; 
+// 设置显示的字的字体和大小，当字体不存在时，大小也是无效的
+oneLabel.font = [UIFont systemFontOfSize:35.0f]; // 只设置字体大小
+oneLabel.font = [UIFont boldSystemFontOfSize:35.0f]; // 设置字体大小并为粗体
+oneLabel.textAlignment = NSTextAlignmentCenter; // 设置字体的显示位置：左对齐、居中、右对齐
+oneLabel.adjustsFontSizeToFitWidth = YES;// 设置字体大小自动适应高度
+oneLabel.userInteractionEnabled = YES; // 设置是否可以与用户进行交互
+oneLabel.enabled = YES; // 设置oneLabel的text是否可以改变，默认是YES
+// 设置行数，前提是高度是足够的
+// 设置行数为0，可以根据文本计算对应文本的高度宽度后，全部显示完全，默认单行显示
+oneLabel.numberOfLines = 3;
+// 设置是否可以高亮
+oneLabel.highlighted = YES;
+oneLabel.highlightedTextColor = [UIColor redColor];
+// 设置阴影
+oneLabel.shadowColor = [UIColor grayColor];
+oneLabel.shadowOffset = CGSizeMake(2.0, 2.0);
 
-[oneSegmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged]; // 添加监听事件
+//设置文字过长时的显示格式
+oneLabel.lineBreakMode = NSLineBreakByClipping;
+//    typedef NS_ENUM(NSInteger, NSLineBreakMode) {
+//        NSLineBreakByWordWrapping = 0,    
+//        NSLineBreakByCharWrapping,
+//        NSLineBreakByClipping,
+//        NSLineBreakByTruncatingHead,
+//        NSLineBreakByTruncatingTail,
+//        NSLineBreakByTruncatingMiddle
+//    }
 
-[oneSegmentedControl removeAllSegments]; // 移除其中全部项
+//如果adjustsFontSizeToFitWidth属性设置为YES，这个属性就来控制文本基线的行为
+ oneLabel.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
+//  typedef enum {
+//      UIBaselineAdjustmentAlignBaselines,
+//      UIBaselineAdjustmentAlignCenters,
+//      UIBaselineAdjustmentNone,
+//  } UIBaselineAdjustment;
 
-// 添加到View上，并释放内存
-[self.view addSubview:oneSegmentedControl];
-[oneSegmentedControl release], oneSegmentedControl = nil;
+
+// 把oneLabel添加到view上面，并释放内存
+[self.view addSubview:oneLabel];
+[oneLabel release], oneLabel = nil;
 
 
 
-#pragma mark - 实现oneSegmentedControl的监听事件
-- (void)segmentedControlAction:(UISegmentedControl *) sender {
-// 获取当前的选中项的索引值
-NSUInteger index = sender.selectedSegmentIndex;
-// 判断索引值
-switch (index) {
-    case 0:
-        NSLog(@&quot;第一个选项被选中&quot;);
-        break;
-    case 1:
-        NSLog(@&quot;第二个选项被选中&quot;);
-        break;
-    case 2:
-        NSLog(@&quot;第三项被选中&quot;);
-        break;
-    case 3:
-        NSLog(@&quot;第四项被选中&quot;);
-        break;
-    default:
-        break;
-}
-}
+// 附：
+// NSLog(@&quot;%@&quot;, [UIFont familyNames]); // 可以打印出全部存在的字体
 </code></pre>
       
     </div>
@@ -362,7 +366,7 @@ switch (index) {
           
             <a href="/tags/iOS新手进阶篇/" rel="tag">#iOS新手进阶篇</a>
           
-            <a href="/tags/UISegmentedControl/" rel="tag">#UISegmentedControl</a>
+            <a href="/tags/UILabel/" rel="tag">#UILabel</a>
           
         </div>
       
@@ -371,16 +375,16 @@ switch (index) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/09/21/UISlider的使用方法详细/" rel="next" title="UISlider的使用方法详细">
-                <i class="fa fa-chevron-left"></i> UISlider的使用方法详细
+              <a href="/2014/09/11/Markdown--入门指南/" rel="next" title="Markdown——入门指南">
+                <i class="fa fa-chevron-left"></i> Markdown——入门指南
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/09/25/UIAlertView的使用方法/" rel="prev" title="UIAlertView的使用方法">
-                UIAlertView的使用方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2014/09/18/UIButton的使用方法详细/" rel="prev" title="UIButton的使用方法详细">
+                UIButton的使用方法详细 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

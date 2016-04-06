@@ -1050,8 +1050,8 @@ return self;
             
               
                 
-                <a class="post-title-link" href="/2014/09/29/UITextView的使用方法详细/" itemprop="url">
-                  UITextView的使用方法详细
+                <a class="post-title-link" href="/2014/10/08/UIPikcerView的联动选择/" itemprop="url">
+                  UIPikcerView的联动选择
                 </a>
               
             
@@ -1064,8 +1064,8 @@ return self;
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-09-29T18:16:58+08:00" content="2014-09-29">
-              2014-09-29
+            <time itemprop="dateCreated" datetime="2014-10-08T18:28:23+08:00" content="2014-10-08">
+              2014-10-08
             </time>
           </span>
 
@@ -1111,15 +1111,27 @@ return self;
 
       
         
-          <pre><code>// UITextView的常用方法 主要用来输入和显示多行文本信息
-UITextView *oneTextView = [[UITextView alloc] init];
-oneTextView.frame = CGRectMake(0, 20, 320, 200); // 设置位置
-oneTextView.backgroundColor = [UIColor whiteColor]; // 设置背景色
-oneTextView.alpha = 1.0; // 设置透明度
-oneTextView.text = @&quot;18331000747  1096455447@qq.com lizi1020@sina.cn  www.baidu.com&quot;; // 设置文字
+          <pre><code> //
+
+#import &quot;RootViewController.h&quot;
+
+@interface RootViewController ()
+
+@end
+
+@implementation RootViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+if (self) {
+    // Custom initialization
+}
+return self;
+}
 </code></pre>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2014/09/29/UITextView的使用方法详细/#more" rel="contents">
+            <a class="btn" href="/2014/10/08/UIPikcerView的联动选择/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1170,8 +1182,8 @@ oneTextView.text = @&quot;18331000747  1096455447@qq.com lizi1020@sina.cn  www.b
             
               
                 
-                <a class="post-title-link" href="/2014/09/21/UISlider的使用方法详细/" itemprop="url">
-                  UISlider的使用方法详细
+                <a class="post-title-link" href="/2014/10/04/手势控制的使用/" itemprop="url">
+                  iOS手势控制的使用
                 </a>
               
             
@@ -1184,8 +1196,8 @@ oneTextView.text = @&quot;18331000747  1096455447@qq.com lizi1020@sina.cn  www.b
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-09-21T17:57:05+08:00" content="2014-09-21">
-              2014-09-21
+            <time itemprop="dateCreated" datetime="2014-10-04T18:20:05+08:00" content="2014-10-04">
+              2014-10-04
             </time>
           </span>
 
@@ -1231,20 +1243,16 @@ oneTextView.text = @&quot;18331000747  1096455447@qq.com lizi1020@sina.cn  www.b
 
       
         
-          <pre><code>// UISlider的常用方法
-UISlider *oneSlider = [[UISlider alloc] init];
-
-// 最常用
-oneSlider.frame = CGRectMake(10, 20, 300, 30); // 设置位置和大小 注意：UISlider的高度可以随便设置，因为是不会变的
-oneSlider.value = 30; // 初始值
-oneSlider.minimumValue = 0; // 最小值
-oneSlider.maximumValue = 100; // 最大值
-oneSlider.backgroundColor = [UIColor blueColor]; // 设置背景颜色
-oneSlider.alpha = 0.9; // 设置透明度
-oneSlider.tag = 1001; // 设置标签，常用在委托中
+          <p>手势识别是具有互斥的原则的，比如单击和双击，如果它识别出一种手势，其后的手势将不被识别</p>
+<pre><code>// 添加单击的手势
+UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
+tapGestureRecognizer.numberOfTapsRequired = 1; // 设置单击几次才触发方法
+[tapGestureRecognizer addTarget:self action:@selector(tapGestureAction:)]; // 添加点击手势的方法
+[self.view addGestureRecognizer:tapGestureRecognizer]; // 添加到当前的View上
+[tapGestureRecognizer release], tapGestureRecognizer = nil; // 释放内存
 </code></pre>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2014/09/21/UISlider的使用方法详细/#more" rel="contents">
+            <a class="btn" href="/2014/10/04/手势控制的使用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1295,8 +1303,8 @@ oneSlider.tag = 1001; // 设置标签，常用在委托中
             
               
                 
-                <a class="post-title-link" href="/2014/09/11/Markdown--入门指南/" itemprop="url">
-                  Markdown——入门指南
+                <a class="post-title-link" href="/2014/09/30/UISearchBar的使用方法详细/" itemprop="url">
+                  UISearchBar的使用方法详细
                 </a>
               
             
@@ -1309,8 +1317,8 @@ oneSlider.tag = 1001; // 设置标签，常用在委托中
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-09-11T14:45:02+08:00" content="2014-09-11">
-              2014-09-11
+            <time itemprop="dateCreated" datetime="2014-09-30T18:18:20+08:00" content="2014-09-30">
+              2014-09-30
             </time>
           </span>
 
@@ -1323,8 +1331,8 @@ oneSlider.tag = 1001; // 设置标签，常用在委托中
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/iOS新手进阶篇/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS新手进阶篇</span>
                   </a>
                 </span>
 
@@ -1356,9 +1364,16 @@ oneSlider.tag = 1001; // 设置标签，常用在委托中
 
       
         
-          <h2 id="导语："><a href="#导语：" class="headerlink" title="导语："></a>导语：</h2><p>Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。<br>
+          <pre><code> // UISearchBar的常用方法 搜索框
+UISearchBar *oneSearchBar = [[UISearchBar alloc] init];
+oneSearchBar.frame = CGRectMake(0, 0, 320, 70); // 设置位置和大小
+oneSearchBar.keyboardType = UIKeyboardTypeEmailAddress; // 设置弹出键盘的类型
+oneSearchBar.barStyle = UIBarStyleBlackTranslucent; // 设置UISearchBar的样式
+oneSearchBar.tintColor = [UIColor redColor]; // 设置UISearchBar的颜色 使用clearColor就是去掉背景
+oneSearchBar.placeholder = @&quot;请输入：&quot;; // 设置提示文字
+</code></pre>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2014/09/11/Markdown--入门指南/#more" rel="contents">
+            <a class="btn" href="/2014/09/30/UISearchBar的使用方法详细/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1391,6 +1406,10 @@ oneSlider.tag = 1001; // 设置标签，常用在委托中
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1429,7 +1448,7 @@ oneSlider.tag = 1001; // 设置标签，常用在委托中
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1437,7 +1456,7 @@ oneSlider.tag = 1001; // 设置标签，常用在委托中
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1446,7 +1465,7 @@ oneSlider.tag = 1001; // 设置标签，常用在委托中
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

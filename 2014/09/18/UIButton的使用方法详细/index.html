@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS新手进阶篇,UISegmentedControl," />
+  <meta name="keywords" content="iOS新手进阶篇,UIButton," />
 
 
 
@@ -57,22 +57,34 @@
 
 
 
-<meta name="description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
+<meta name="description" content="// UIButton的常用方法
+UIButton *oneButton = [UIButton     buttonWithType:UIButtonTypeCustom]; 
+// 初始化时设置Button样式
+// 风格有如下
+//    typedef enum {
+//        UIButtonTypeCustom = 0,           // 自定义，无风格
+//">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UISegmentedControl的使用方法详细">
-<meta property="og:url" content="http://yoursite.com/2014/09/24/UISegmentedControl的使用方法详细/index.html">
+<meta property="og:title" content="UIButton的使用方法详细">
+<meta property="og:url" content="http://yoursite.com/2014/09/18/UIButton的使用方法详细/index.html">
 <meta property="og:site_name" content="孙聚德">
-<meta property="og:description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
-<meta property="og:updated_time" content="2016-04-06T07:47:38.000Z">
+<meta property="og:description" content="// UIButton的常用方法
+UIButton *oneButton = [UIButton     buttonWithType:UIButtonTypeCustom]; 
+// 初始化时设置Button样式
+// 风格有如下
+//    typedef enum {
+//        UIButtonTypeCustom = 0,           // 自定义，无风格
+//">
+<meta property="og:updated_time" content="2016-04-06T07:41:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UISegmentedControl的使用方法详细">
-<meta name="twitter:description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
+<meta name="twitter:title" content="UIButton的使用方法详细">
+<meta name="twitter:description" content="// UIButton的常用方法
+UIButton *oneButton = [UIButton     buttonWithType:UIButtonTypeCustom]; 
+// 初始化时设置Button样式
+// 风格有如下
+//    typedef enum {
+//        UIButtonTypeCustom = 0,           // 自定义，无风格
+//">
 
 
 
@@ -90,7 +102,7 @@ UISegmentedControl *oneSegmentedControl">
   };
 </script>
 
-  <title> UISegmentedControl的使用方法详细 | 孙聚德 </title>
+  <title> UIButton的使用方法详细 | 孙聚德 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,7 +232,7 @@ UISegmentedControl *oneSegmentedControl">
             
             
               
-                UISegmentedControl的使用方法详细
+                UIButton的使用方法详细
               
             
           </h1>
@@ -232,8 +244,8 @@ UISegmentedControl *oneSegmentedControl">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-09-24T18:03:25+08:00" content="2014-09-24">
-              2014-09-24
+            <time itemprop="dateCreated" datetime="2014-09-18T17:28:19+08:00" content="2014-09-18">
+              2014-09-18
             </time>
           </span>
 
@@ -278,68 +290,48 @@ UISegmentedControl *oneSegmentedControl">
       
 
       
-        <pre><code>// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&quot;1&quot;, @&quot;2&quot;, @&quot;3&quot;, @&quot;4&quot;, nil];
-UISegmentedControl *oneSegmentedControl = [[UISegmentedControl alloc] initWithItems:oneArrayForSegmentedControl]; // 初始化时加入items
-oneSegmentedControl.frame = CGRectMake(20, 20, 280, 40);
-oneSegmentedControl.tintColor = [UIColor redColor]; // 选中的颜色
+        <pre><code>// UIButton的常用方法
+UIButton *oneButton = [UIButton     buttonWithType:UIButtonTypeCustom]; 
+// 初始化时设置Button样式
+// 风格有如下
+//    typedef enum {
+//        UIButtonTypeCustom = 0,           // 自定义，无风格
+//        UIButtonTypeRoundedRect,        // 白色圆角矩形，类似偏好设置表格单元或者地址簿卡片
+//        UIButtonTypeDetailDisclosure,//蓝色的披露按钮，可放在任何文字旁
+//        UIButtonTypeInfoLight,//微件(widget)使用的小圆圈信息按钮，可以放在任何文字旁
+//        UIButtonTypeInfoDark,//白色背景下使用的深色圆圈信息按钮
+//        UIButtonTypeContactAdd,//蓝色加号(+)按钮，可以放在任何文字旁
+//    } UIButtonType;
 </code></pre><a id="more"></a>
-<pre><code>oneSegmentedControl.selectedSegmentIndex = 1; // 设置默认选中项 此处是小标，从0开始
-oneSegmentedControl.segmentedControlStyle = UISegmentedControlStylePlain; // 设置样式
-//    typedef NS_ENUM(NSInteger, UISegmentedControlStyle) {
-//        UISegmentedControlStylePlain,     // large plain
-//        UISegmentedControlStyleBordered,  // large bordered
-//        UISegmentedControlStyleBar,       // small button/nav bar style. tintable
-//        UISegmentedControlStyleBezeled,   // DEPRECATED. Do not use this style.
+<pre><code>// 最常用
+oneButton.frame = CGRectMake(10, 10, 300, 30); // 设置oneButton的位置和大小
+oneButton.backgroundColor = [UIColor blueColor]; // 设置oneButton背景色
+oneButton.alpha = 0.8; // 设置oneButton的透明度范围在0.0-1.0之间
+[oneButton setTitle:@&quot;我是一个UIButton&quot; forState:UIControlStateNormal]; // 设置在什么状态下显示什么文字
+[oneButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal]; // 设置什么状态下字体什么颜色
+[oneButton setBackgroundImage:[UIImage imageNamed:@&quot;image.jpg&quot;] forState:UIControlStateNormal]; // 设置什么状态下显示的背景图像
+// 上面几个方法都提到 共同的参数 forState . 这个参数决定了标题、图像或其他属性将在何种状态下显现。你可以编程令按钮在那个状态变化
+//    enum {
+//        UIControlStateNormal       = 0,//常态
+//        UIControlStateHighlighted  = 1 &lt;&lt; 0,    //  高亮
+//        UIControlStateDisabled     = 1 &lt;&lt; 1,    //禁用
+//        UIControlStateSelected     = 1 &lt;&lt; 2,    // 选中
+//        UIControlStateApplication  = 0x00FF0000,// 当应用程序标志使用时
+//        UIControlStateReserved     = 0xFF000000 // 为内部框架预留的
 //    };
-oneSegmentedControl.momentary = NO; // 设置点击后是否恢复原样, 默认是NO， 不恢复
-[oneSegmentedControl setTitle:@&quot;NO1&quot; forSegmentAtIndex:0];
-[oneSegmentedControl setTitle:@&quot;NO2&quot; forSegmentAtIndex:1];
-[oneSegmentedControl setTitle:@&quot;NO3&quot; forSegmentAtIndex:2];
-[oneSegmentedControl setTitle:@&quot;NO5&quot; forSegmentAtIndex:3]; // 根据Index设置名称
-[oneSegmentedControl setImage:[UIImage imageNamed:@&quot;bbb.png&quot;] forSegmentAtIndex:3]; // 根据索引设置
-[oneSegmentedControl insertSegmentWithTitle:@&quot;KO&quot; atIndex:2 animated:YES]; // 在指定位置插入一个，并使用动画
-[oneSegmentedControl removeSegmentAtIndex:1 animated:YES]; // 指定索引移除一个，使用动画
-[oneSegmentedControl setWidth:100 forSegmentAtIndex:1]; // 设置指定索引位置的宽度
-[oneSegmentedControl setContentOffset:CGSizeMake(5.0, -5) forSegmentAtIndex:1]; // 根据索引设置文字的位置
-NSLog(@&quot;%@&quot;, [oneSegmentedControl titleForSegmentAtIndex:0]); // 获取指定索引上显示的文字 NO1
-NSLog(@&quot;%u&quot;, oneSegmentedControl.numberOfSegments); // 获取总共有多少项
-NSLog(@&quot;%f&quot;, [oneSegmentedControl widthForSegmentAtIndex:1]); // 根据索引获取那一项的宽度
-NSLog(@&quot;%i&quot;, [oneSegmentedControl isEnabledForSegmentAtIndex:2]); // 判断索引项是否可选
-[oneSegmentedControl setEnabled:NO forSegmentAtIndex:2]; // 设置索引项不可选
+oneButton.tag = 10001; // 设置标签，用于便于点击的是哪个按钮，常用在委托方法中
+[oneButton.titleLabel setFont:[UIFont systemFontOfSize:25.0f]]; // 设置文字的大小
 
-[oneSegmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged]; // 添加监听事件
+oneButton.adjustsImageWhenDisabled = NO; // 对按钮进行微调。当按钮禁用时，图像会被画的颜色深一些 默认是YES，禁止设置为NO
+oneButton.adjustsImageWhenHighlighted = NO; // 对按钮进行微调。当按钮高亮是，图像会被画得颜色深一些 默认是YES，禁止设置为NO
 
-[oneSegmentedControl removeAllSegments]; // 移除其中全部项
+oneButton.showsTouchWhenHighlighted = YES; // 设置点击的时候是否有光照得效果
 
-// 添加到View上，并释放内存
-[self.view addSubview:oneSegmentedControl];
-[oneSegmentedControl release], oneSegmentedControl = nil;
+// 给按钮添加响应事件
+[oneButton addTarget:self action:@selector(oneButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];//当按钮被按下时会执行oneButtonTouchUpinside:方法。这个方法是自定义的，需要自己写出。参数是(UIButton *)类型
 
-
-
-#pragma mark - 实现oneSegmentedControl的监听事件
-- (void)segmentedControlAction:(UISegmentedControl *) sender {
-// 获取当前的选中项的索引值
-NSUInteger index = sender.selectedSegmentIndex;
-// 判断索引值
-switch (index) {
-    case 0:
-        NSLog(@&quot;第一个选项被选中&quot;);
-        break;
-    case 1:
-        NSLog(@&quot;第二个选项被选中&quot;);
-        break;
-    case 2:
-        NSLog(@&quot;第三项被选中&quot;);
-        break;
-    case 3:
-        NSLog(@&quot;第四项被选中&quot;);
-        break;
-    default:
-        break;
-}
-}
+// 添加到view
+[self.view addSubview:oneButton];
 </code></pre>
       
     </div>
@@ -362,7 +354,7 @@ switch (index) {
           
             <a href="/tags/iOS新手进阶篇/" rel="tag">#iOS新手进阶篇</a>
           
-            <a href="/tags/UISegmentedControl/" rel="tag">#UISegmentedControl</a>
+            <a href="/tags/UIButton/" rel="tag">#UIButton</a>
           
         </div>
       
@@ -371,16 +363,16 @@ switch (index) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/09/21/UISlider的使用方法详细/" rel="next" title="UISlider的使用方法详细">
-                <i class="fa fa-chevron-left"></i> UISlider的使用方法详细
+              <a href="/2014/09/17/UILabel的使用方法详细/" rel="next" title="UILabel的使用方法详细">
+                <i class="fa fa-chevron-left"></i> UILabel的使用方法详细
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/09/25/UIAlertView的使用方法/" rel="prev" title="UIAlertView的使用方法">
-                UIAlertView的使用方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2014/09/19/UITextFiled的使用方法详细/" rel="prev" title="UITextFiled的使用方法详细">
+                UITextFiled的使用方法详细 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

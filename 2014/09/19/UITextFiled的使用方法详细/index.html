@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS新手进阶篇,UISegmentedControl," />
+  <meta name="keywords" content="iOS,UITextFiled," />
 
 
 
@@ -57,22 +57,31 @@
 
 
 
-<meta name="description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
+<meta name="description" content="// UITextField的常用方法
+UITextField *oneTextField = [[UITextField alloc] init];
+
+// 最常用
+oneTextField.frame = CGRectMake(30, 30, 260, 35); // 设置位置
+oneTextField.backgroundColor = [UIColor grayColor]; // 设置背">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UISegmentedControl的使用方法详细">
-<meta property="og:url" content="http://yoursite.com/2014/09/24/UISegmentedControl的使用方法详细/index.html">
+<meta property="og:title" content="UITextFiled的使用方法详细">
+<meta property="og:url" content="http://yoursite.com/2014/09/19/UITextFiled的使用方法详细/index.html">
 <meta property="og:site_name" content="孙聚德">
-<meta property="og:description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
-<meta property="og:updated_time" content="2016-04-06T07:47:38.000Z">
+<meta property="og:description" content="// UITextField的常用方法
+UITextField *oneTextField = [[UITextField alloc] init];
+
+// 最常用
+oneTextField.frame = CGRectMake(30, 30, 260, 35); // 设置位置
+oneTextField.backgroundColor = [UIColor grayColor]; // 设置背">
+<meta property="og:updated_time" content="2015-12-15T07:50:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UISegmentedControl的使用方法详细">
-<meta name="twitter:description" content="// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&amp;quot;1&amp;quot;, @&amp;quot;2&amp;quot;, @&amp;quot;3&amp;quot;, @&amp;quot;4&amp;quot;, nil];
-UISegmentedControl *oneSegmentedControl">
+<meta name="twitter:title" content="UITextFiled的使用方法详细">
+<meta name="twitter:description" content="// UITextField的常用方法
+UITextField *oneTextField = [[UITextField alloc] init];
+
+// 最常用
+oneTextField.frame = CGRectMake(30, 30, 260, 35); // 设置位置
+oneTextField.backgroundColor = [UIColor grayColor]; // 设置背">
 
 
 
@@ -90,7 +99,7 @@ UISegmentedControl *oneSegmentedControl">
   };
 </script>
 
-  <title> UISegmentedControl的使用方法详细 | 孙聚德 </title>
+  <title> UITextFiled的使用方法详细 | 孙聚德 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,7 +229,7 @@ UISegmentedControl *oneSegmentedControl">
             
             
               
-                UISegmentedControl的使用方法详细
+                UITextFiled的使用方法详细
               
             
           </h1>
@@ -232,8 +241,8 @@ UISegmentedControl *oneSegmentedControl">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-09-24T18:03:25+08:00" content="2014-09-24">
-              2014-09-24
+            <time itemprop="dateCreated" datetime="2014-09-19T17:40:20+08:00" content="2014-09-19">
+              2014-09-19
             </time>
           </span>
 
@@ -246,8 +255,8 @@ UISegmentedControl *oneSegmentedControl">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS新手进阶篇/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS新手进阶篇</span>
+                  <a href="/categories/技术篇/" itemprop="url" rel="index">
+                    <span itemprop="name">技术篇</span>
                   </a>
                 </span>
 
@@ -278,67 +287,143 @@ UISegmentedControl *oneSegmentedControl">
       
 
       
-        <pre><code>// UISegmentedControl的使用
-NSArray *oneArrayForSegmentedControl = [NSArray arrayWithObjects:@&quot;1&quot;, @&quot;2&quot;, @&quot;3&quot;, @&quot;4&quot;, nil];
-UISegmentedControl *oneSegmentedControl = [[UISegmentedControl alloc] initWithItems:oneArrayForSegmentedControl]; // 初始化时加入items
-oneSegmentedControl.frame = CGRectMake(20, 20, 280, 40);
-oneSegmentedControl.tintColor = [UIColor redColor]; // 选中的颜色
+        <pre><code>// UITextField的常用方法
+UITextField *oneTextField = [[UITextField alloc] init];
+
+// 最常用
+oneTextField.frame = CGRectMake(30, 30, 260, 35); // 设置位置
+oneTextField.backgroundColor = [UIColor grayColor]; // 设置背景颜色
+oneTextField.alpha = 1.0; // 设置透明度，范围从0.0-1.0之间
+oneTextField.textColor = [UIColor redColor]; // 设置文字的颜色
 </code></pre><a id="more"></a>
-<pre><code>oneSegmentedControl.selectedSegmentIndex = 1; // 设置默认选中项 此处是小标，从0开始
-oneSegmentedControl.segmentedControlStyle = UISegmentedControlStylePlain; // 设置样式
-//    typedef NS_ENUM(NSInteger, UISegmentedControlStyle) {
-//        UISegmentedControlStylePlain,     // large plain
-//        UISegmentedControlStyleBordered,  // large bordered
-//        UISegmentedControlStyleBar,       // small button/nav bar style. tintable
-//        UISegmentedControlStyleBezeled,   // DEPRECATED. Do not use this style.
+<pre><code>oneTextField.text = @&quot;默认的文字&quot;; // 设置默认的文字
+oneTextField.placeholder = @&quot;这是提示文字&quot;; // 显示提示文件，当输入文字时将自动消失
+oneTextField.font = [UIFont boldSystemFontOfSize:25.0f]; // 设置字体的大小
+oneTextField.textAlignment = NSTextAlignmentCenter; // 设置文字的对其方式
+// 对其的样式如下
+//    typedef NS_ENUM(NSInteger, NSTextAlignment) {
+//        NSTextAlignmentLeft      = 0,    // Visually left aligned
+//#if TARGET_OS_IPHONE
+//        NSTextAlignmentCenter    = 1,    // Visually centered
+//        NSTextAlignmentRight     = 2,    // Visually right aligned
+//#else
+//        NSTextAlignmentRight     = 1,    // Visually right aligned
+//        NSTextAlignmentCenter    = 2,    // Visually centered
+//#endif
+//        NSTextAlignmentJustified = 3,    // Fully-justified. The last line in a paragraph is natural-aligned.
+//        NSTextAlignmentNatural   = 4,    // Indicates the default alignment for script
+//    } NS_ENUM_AVAILABLE_IOS(6_0);
+
+// 设置oneTextField的样式
+oneTextField.borderStyle = UITextBorderStyleRoundedRect; // 设置oneTextField的样式
+oneTextField.clearsOnBeginEditing = YES; // 再次编辑就清空原有的内容
+oneTextField.minimumFontSize = 20.0f; // 设置自动缩小显示的最小字体大小    
+oneTextField.tag = 10001; // 设置oneTextField的标签，主要用在委托方法中
+oneTextField.secureTextEntry = NO; // 设置是否以密码的圆点形式显示
+oneTextField.autocorrectionType = YES; // 设置是否启动自动提醒更新功能
+oneTextField.returnKeyType = UIReturnKeyDefault; // 设置弹出的键盘带形式与带的按键
+// 以下是弹出的键盘的带按钮的全部样式
+//    typedef NS_ENUM(NSInteger, UIReturnKeyType) {
+//        UIReturnKeyDefault, // 默认的样式
+//        UIReturnKeyGo, // 带一个go按钮
+//        UIReturnKeyGoogle, // 带一个Search按钮，使用google搜索    
+//        UIReturnKeyJoin, // 带一个Join按钮，登录时使用
+//        UIReturnKeyNext, // 带一个Next按钮，进入下一个输入框
+//        UIReturnKeyRoute, // 带一个Route按钮
+//        UIReturnKeySearch, // 带一个Search按钮
+//        UIReturnKeySend, // 带一个Send按钮
+//        UIReturnKeyYahoo, // 带一个Search，使用yahoo搜索
+//        UIReturnKeyDone, // 带一个Done按钮
+//        UIReturnKeyEmergencyCall, // 带一个emergency call按钮
 //    };
-oneSegmentedControl.momentary = NO; // 设置点击后是否恢复原样, 默认是NO， 不恢复
-[oneSegmentedControl setTitle:@&quot;NO1&quot; forSegmentAtIndex:0];
-[oneSegmentedControl setTitle:@&quot;NO2&quot; forSegmentAtIndex:1];
-[oneSegmentedControl setTitle:@&quot;NO3&quot; forSegmentAtIndex:2];
-[oneSegmentedControl setTitle:@&quot;NO5&quot; forSegmentAtIndex:3]; // 根据Index设置名称
-[oneSegmentedControl setImage:[UIImage imageNamed:@&quot;bbb.png&quot;] forSegmentAtIndex:3]; // 根据索引设置
-[oneSegmentedControl insertSegmentWithTitle:@&quot;KO&quot; atIndex:2 animated:YES]; // 在指定位置插入一个，并使用动画
-[oneSegmentedControl removeSegmentAtIndex:1 animated:YES]; // 指定索引移除一个，使用动画
-[oneSegmentedControl setWidth:100 forSegmentAtIndex:1]; // 设置指定索引位置的宽度
-[oneSegmentedControl setContentOffset:CGSizeMake(5.0, -5) forSegmentAtIndex:1]; // 根据索引设置文字的位置
-NSLog(@&quot;%@&quot;, [oneSegmentedControl titleForSegmentAtIndex:0]); // 获取指定索引上显示的文字 NO1
-NSLog(@&quot;%u&quot;, oneSegmentedControl.numberOfSegments); // 获取总共有多少项
-NSLog(@&quot;%f&quot;, [oneSegmentedControl widthForSegmentAtIndex:1]); // 根据索引获取那一项的宽度
-NSLog(@&quot;%i&quot;, [oneSegmentedControl isEnabledForSegmentAtIndex:2]); // 判断索引项是否可选
-[oneSegmentedControl setEnabled:NO forSegmentAtIndex:2]; // 设置索引项不可选
-
-[oneSegmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged]; // 添加监听事件
-
-[oneSegmentedControl removeAllSegments]; // 移除其中全部项
-
-// 添加到View上，并释放内存
-[self.view addSubview:oneSegmentedControl];
-[oneSegmentedControl release], oneSegmentedControl = nil;
 
 
+oneTextField.keyboardType = UIKeyboardTypeNamePhonePad; // 弹出的键盘的样式
+// 以下是所有弹出的键盘的样式
+//    typedef NS_ENUM(NSInteger, UIKeyboardType) {
+//        UIKeyboardTypeDefault,                // Default type for the current input method.
+//        UIKeyboardTypeASCIICapable,           // Displays a keyboard which can enter ASCII characters, non-ASCII keyboards remain active
+//        UIKeyboardTypeNumbersAndPunctuation,  // Numbers and assorted punctuation.
+//        UIKeyboardTypeURL,                    // A type optimized for URL entry (shows . / .com prominently).
+//        UIKeyboardTypeNumberPad,              // A number pad (0-9). Suitable for PIN entry.
+//        UIKeyboardTypePhonePad,               // A phone pad (1-9, *, 0, #, with letters under the numbers).
+//        UIKeyboardTypeNamePhonePad,           // A type optimized for entering a person&apos;s name or phone number.
+//        UIKeyboardTypeEmailAddress,           // A type optimized for multiple email address entry (shows space @ . prominently).
+//#if __IPHONE_4_1 &lt;= __IPHONE_OS_VERSION_MAX_ALLOWED
+//        UIKeyboardTypeDecimalPad,             // A number pad with a decimal point.
+//#endif
+//#if __IPHONE_5_0 &lt;= __IPHONE_OS_VERSION_MAX_ALLOWED
+//        UIKeyboardTypeTwitter,                // A type optimized for twitter text entry (easy access to @ #)
+//#endif
+//        
+//        UIKeyboardTypeAlphabet = UIKeyboardTypeASCIICapable, // Deprecated
+//        
+//    };
 
-#pragma mark - 实现oneSegmentedControl的监听事件
-- (void)segmentedControlAction:(UISegmentedControl *) sender {
-// 获取当前的选中项的索引值
-NSUInteger index = sender.selectedSegmentIndex;
-// 判断索引值
-switch (index) {
-    case 0:
-        NSLog(@&quot;第一个选项被选中&quot;);
-        break;
-    case 1:
-        NSLog(@&quot;第二个选项被选中&quot;);
-        break;
-    case 2:
-        NSLog(@&quot;第三项被选中&quot;);
-        break;
-    case 3:
-        NSLog(@&quot;第四项被选中&quot;);
-        break;
-    default:
-        break;
+oneTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter; // 输入的对其方法
+oneTextField.autoresizingMask = UIViewAutoresizingFlexibleHeight; // 自动适应高度
+oneTextField.clearButtonMode = UITextFieldViewModeWhileEditing; // 编辑的时候会显示出删除全部的小X
+// 出现删除全部小X的时间
+//    typedef enum {
+//        UITextFieldViewModeNever　// 重不出现
+//        UITextFieldViewModeWhileEditing, // 编辑时出现
+//        UITextFieldViewModeUnlessEditing,　// 除了编辑外都出现
+//        UITextFieldViewModeAlways 　// 一直出现
+//    } UITextFieldViewMode;
+
+//首字母是否大写
+oneTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+// 以下是字母大写的几种情况
+//    typedef enum {
+//        UITextAutocapitalizationTypeNone, // 不自动大写
+//        UITextAutocapitalizationTypeWords,　// 单词首字母大写
+//        UITextAutocapitalizationTypeSentences,　// 句子的首字母大写
+//        UITextAutocapitalizationTypeAllCharacters, // 所有字母都大写
+//    } UITextAutocapitalizationType;
+
+
+//键盘外观
+oneTextField.keyboardAppearance=UIKeyboardAppearanceAlert;
+//    typedef enum {
+//        UIKeyboardAppearanceDefault， // 默认外观，浅灰色
+//        UIKeyboardAppearanceAlert，　 　// 深灰 石墨色
+//    } UIReturnKeyType;
+
+
+//最右侧加图片是以下代码　 左侧类似
+UIImageView *image=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@&quot;ic_action_stat_share.png&quot;]];
+// oneTextField.rightView = image;
+// oneTextField.rightViewMode = UITextFieldViewModeAlways;
+oneTextField.leftView = image;
+oneTextField.leftViewMode = UITextFieldViewModeAlways;
+//    typedef enum {
+//        UITextFieldViewModeNever,
+//        UITextFieldViewModeWhileEditing,
+//        UITextFieldViewModeUnlessEditing,
+//        UITextFieldViewModeAlways
+//    } UITextFieldViewMode;
+
+
+// 要想设置委托，就需要实现协议，需要在.h文件中添加协议
+oneTextField.delegate = self; // 设置委托
+
+// 添加到view上，并释放内存
+[self.view addSubview:oneTextField];
+[oneTextField release], oneTextField = nil;
+
+
+//当开始点击textField会调用的方法
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+NSLog(@&quot;开始编辑&quot;);
 }
+//当textField编辑结束时调用的方法
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+NSLog(@&quot;结束编辑&quot;);
+}
+//按下Done按钮的调用方法，我们让键盘消失
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+[textField resignFirstResponder];
+return YES;
 }
 </code></pre>
       
@@ -360,9 +445,9 @@ switch (index) {
       
         <div class="post-tags">
           
-            <a href="/tags/iOS新手进阶篇/" rel="tag">#iOS新手进阶篇</a>
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
-            <a href="/tags/UISegmentedControl/" rel="tag">#UISegmentedControl</a>
+            <a href="/tags/UITextFiled/" rel="tag">#UITextFiled</a>
           
         </div>
       
@@ -371,16 +456,16 @@ switch (index) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/09/21/UISlider的使用方法详细/" rel="next" title="UISlider的使用方法详细">
-                <i class="fa fa-chevron-left"></i> UISlider的使用方法详细
+              <a href="/2014/09/18/UIButton的使用方法详细/" rel="next" title="UIButton的使用方法详细">
+                <i class="fa fa-chevron-left"></i> UIButton的使用方法详细
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/09/25/UIAlertView的使用方法/" rel="prev" title="UIAlertView的使用方法">
-                UIAlertView的使用方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2014/09/21/UISlider的使用方法详细/" rel="prev" title="UISlider的使用方法详细">
+                UISlider的使用方法详细 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
