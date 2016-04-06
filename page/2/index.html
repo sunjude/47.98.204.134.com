@@ -216,6 +216,248 @@
             
               
                 
+                <a class="post-title-link" href="/2014/10/04/手势控制的使用/" itemprop="url">
+                  iOS手势控制的使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-10-04T18:20:05+08:00" content="2014-10-04">
+              2014-10-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS新手进阶篇/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS新手进阶篇</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>手势识别是具有互斥的原则的，比如单击和双击，如果它识别出一种手势，其后的手势将不被识别</p>
+<pre><code>// 添加单击的手势
+UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
+tapGestureRecognizer.numberOfTapsRequired = 1; // 设置单击几次才触发方法
+[tapGestureRecognizer addTarget:self action:@selector(tapGestureAction:)]; // 添加点击手势的方法
+[self.view addGestureRecognizer:tapGestureRecognizer]; // 添加到当前的View上
+[tapGestureRecognizer release], tapGestureRecognizer = nil; // 释放内存
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/10/04/手势控制的使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/09/30/UISearchBar的使用方法详细/" itemprop="url">
+                  UISearchBar的使用方法详细
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-09-30T18:18:20+08:00" content="2014-09-30">
+              2014-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS新手进阶篇/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS新手进阶篇</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <pre><code> // UISearchBar的常用方法 搜索框
+UISearchBar *oneSearchBar = [[UISearchBar alloc] init];
+oneSearchBar.frame = CGRectMake(0, 0, 320, 70); // 设置位置和大小
+oneSearchBar.keyboardType = UIKeyboardTypeEmailAddress; // 设置弹出键盘的类型
+oneSearchBar.barStyle = UIBarStyleBlackTranslucent; // 设置UISearchBar的样式
+oneSearchBar.tintColor = [UIColor redColor]; // 设置UISearchBar的颜色 使用clearColor就是去掉背景
+oneSearchBar.placeholder = @&quot;请输入：&quot;; // 设置提示文字
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/09/30/UISearchBar的使用方法详细/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2014/09/29/UITextView的使用方法详细/" itemprop="url">
                   UITextView的使用方法详细
                 </a>
@@ -1204,7 +1446,7 @@ oneLabel.alpha = 1.0; // 设置透明度 （范围是0.0-1.0之间）
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1212,7 +1454,7 @@ oneLabel.alpha = 1.0; // 设置透明度 （范围是0.0-1.0之间）
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1221,7 +1463,7 @@ oneLabel.alpha = 1.0; // 设置透明度 （范围是0.0-1.0之间）
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
