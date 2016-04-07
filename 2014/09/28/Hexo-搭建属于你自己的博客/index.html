@@ -1,0 +1,669 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo搭建博客," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="安装过程中如果出现问题请到最后面查看问题总结，或许能帮助你解决问题。
+前言
+Hexo是一个很好的博客，个人觉得他的界面干净利落，阅读体验也是很好。初次接触Hexo是在朋友的介绍下才知道的，hexo是需要手动搭建（觉得B格很高），在朋友的帮助下也终于是完成了。开篇记录一下搭建的过程希望能帮助到浏览到这里的朋友我的系统为OS X，windows也可以参考。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo--搭建属于你自己的博客">
+<meta property="og:url" content="http://yoursite.com/2014/09/28/Hexo-搭建属于你自己的博客/index.html">
+<meta property="og:site_name" content="孙聚德">
+<meta property="og:description" content="安装过程中如果出现问题请到最后面查看问题总结，或许能帮助你解决问题。
+前言
+Hexo是一个很好的博客，个人觉得他的界面干净利落，阅读体验也是很好。初次接触Hexo是在朋友的介绍下才知道的，hexo是需要手动搭建（觉得B格很高），在朋友的帮助下也终于是完成了。开篇记录一下搭建的过程希望能帮助到浏览到这里的朋友我的系统为OS X，windows也可以参考。">
+<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/7446196.jpg">
+<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/hexo_repository.jpg">
+<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/47196650.jpg">
+<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/hex0_SSH%20Key.jpg">
+<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/87149726.jpg">
+<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/54557566.jpg">
+<meta property="og:updated_time" content="2016-04-07T15:00:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo--搭建属于你自己的博客">
+<meta name="twitter:description" content="安装过程中如果出现问题请到最后面查看问题总结，或许能帮助你解决问题。
+前言
+Hexo是一个很好的博客，个人觉得他的界面干净利落，阅读体验也是很好。初次接触Hexo是在朋友的介绍下才知道的，hexo是需要手动搭建（觉得B格很高），在朋友的帮助下也终于是完成了。开篇记录一下搭建的过程希望能帮助到浏览到这里的朋友我的系统为OS X，windows也可以参考。">
+<meta name="twitter:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/7446196.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Hexo--搭建属于你自己的博客 | 孙聚德 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">孙聚德</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">今日披星戴月，明日成就梦想！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hexo--搭建属于你自己的博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-09-28T19:23:19+08:00" content="2014-09-28">
+              2014-09-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>安装过程中如果出现问题请到最后面查看问题总结，或许能帮助你解决问题。</strong></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr>
+<p>Hexo是一个很好的博客，个人觉得他的界面干净利落，阅读体验也是很好。初次接触Hexo是在朋友的介绍下才知道的，hexo是需要手动搭建（觉得B格很高），在朋友的帮助下也终于是完成了。<br>开篇记录一下搭建的过程希望能帮助到浏览到这里的朋友<br>我的系统为OS X，windows也可以参考。</p>
+<a id="more"></a>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+<p>Hexo是一个开源的静态博客生成器，用node.js开发，作者是台湾大学生tommy351。</p>
+<h2 id="思路总结"><a href="#思路总结" class="headerlink" title="思路总结"></a>思路总结</h2><hr>
+<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/7446196.jpg" alt="思路"></p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><hr>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>安装过Xcode可以直接跳过这步，因为Xcode自带Git<br>Git有很多，Mac和Windows都可以直接到<a href="git-scm.com">git-scm</a>官网下载安装</p>
+<h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>奉上Mac<a href="http://pan.baidu.com/s/1hqHbx6s" target="_blank" rel="external">node-v4.2.2.pkg</a>安装包。</p>
+<p>这两个软件的安装步骤就不多做介绍，一直点下一步就好</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><hr>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><pre><code>sudo npm install -g hexo
+</code></pre><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>我们可以创建一个新文件夹作为hexo的安装目录，把所有的hexo文件都放里面，主要是为了方便管理。</p>
+<p><strong>初始化有两种方式：</strong></p>
+<p>直接指定目录(指定文件的绝对路径)</p>
+<pre><code>hexo init folder 
+folder:是指定目录的文件路径。例：/Documents/hexo
+</code></pre><p>进入指定目录(cd /文件夹路径)</p>
+<pre><code>hexo init
+</code></pre><p>终端执行命令后显示的结果：</p>
+<pre><code>[info] Copying data
+[info] You are almost done! Don&apos;t forget to run `npm install` before start blogging with Hexo!
+</code></pre><h3 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h3><pre><code>sudo npm install
+</code></pre><h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><p>cd 到你的hexo安装目录（工作目录），执行如下命令</p>
+<pre><code>hexo generate 简写 hexo g
+</code></pre><p>必须到你新建的hexo安装目录下执行，否则不成功</p>
+<h3 id="本地启动测试"><a href="#本地启动测试" class="headerlink" title="本地启动测试"></a>本地启动测试</h3><pre><code>hexo server 简写 hexo s
+</code></pre><p>到此本地服务已经完成，可以再浏览器中输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>进行查看。接下来需要把我们创建的静态页面托管到github上，别人才能访问到</p>
+<h2 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h2><hr>
+<h3 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h3><p>这里就不再赘述，已有Github账号可以跳过此步骤。</p>
+<h3 id="新建repository-仓库"><a href="#新建repository-仓库" class="headerlink" title="新建repository(仓库)"></a>新建repository(仓库)</h3><p>登陆Github账号后，点击右上角的“+”号按钮，选择“New repository”</p>
+<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/hexo_repository.jpg" alt="add repository"></p>
+<p>在Create a new repository界面填写格式如下图所示: 用户名.github.io</p>
+<p>填写完成点Create repository创建完成</p>
+<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/47196650.jpg" alt="reposity"></p>
+<h4 id="生成SSH-Keys："><a href="#生成SSH-Keys：" class="headerlink" title="生成SSH Keys："></a>生成SSH Keys：</h4><p>我们如何让本地git项目与远程的github建立联系？这时候就要用到SSH Keys</p>
+<h5 id="1、生成SSH-Keys"><a href="#1、生成SSH-Keys" class="headerlink" title="1、生成SSH Keys"></a>1、生成SSH Keys</h5><p>使用ssh-keygen命令生成密钥对</p>
+<pre><code>ssh-keygen -t rsa -C &quot;这里是你申请Github账号时的邮箱&quot;
+</code></pre><p>然后系统会要你输入密码：（我们输入的密码会在你提交项目的时候使用）</p>
+<pre><code>Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;
+Enter same passphrase again:&lt;再次输入加密串&gt;
+</code></pre><p>（终端提示生成的文件路径）找到你生成的密钥找到<code>id_rsa.pub</code>用终端进入编辑，复制密钥。</p>
+<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/hex0_SSH%20Key.jpg" alt=""></p>
+<h5 id="2、添加你的SSH-Key到ssh-agent"><a href="#2、添加你的SSH-Key到ssh-agent" class="headerlink" title="2、添加你的SSH Key到ssh-agent"></a>2、添加你的SSH Key到<a href="http://blog.csdn.net/icebergwang/article/details/13738313" target="_blank" rel="external">ssh-agent</a></h5><p>添加你的SSH Key到ssh-agent（作用：以后你再提交的过程中后台自动给你输入密码）</p>
+<pre><code>//在后台打开 ssh-agent
+eval &quot;$(ssh-agent -s)&quot;
+
+添加你的SSH Key到ssh-agent
+ssh-add 你的私钥路径（就是终端提示你SSHKey的私钥路径）
+我的是：
+ssh-add /var/root/.ssh/id_rsa
+</code></pre><h4 id="添加SSH-Key到Github："><a href="#添加SSH-Key到Github：" class="headerlink" title="添加SSH Key到Github："></a>添加SSH Key到Github：</h4><h5 id="1、添加SSH-Key"><a href="#1、添加SSH-Key" class="headerlink" title="1、添加SSH Key"></a>1、添加SSH Key</h5><p>通过命令复制SSH Key内容到系统剪贴板</p>
+<pre><code>pbcopy &lt; 终端给的公钥路径
+看，下边是我的：
+pbcopy &lt; /var/root/.ssh/id_rsa.pub
+</code></pre><p>登陆Github,点击右侧用户按钮，选择Settings</p>
+<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/87149726.jpg" alt="SSH"></p>
+<p>点击 Add SSH key 按钮，将复制的密钥粘贴到 Key 栏</p>
+<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/54557566.jpg" alt="Key"></p>
+<h5 id="2、测试能不能链接成功"><a href="#2、测试能不能链接成功" class="headerlink" title="2、测试能不能链接成功"></a>2、测试能不能链接成功</h5><p>测试</p>
+<pre><code>ssh -T git@github.com
+</code></pre><p>执行结果</p>
+<pre><code>Permanently added the RSA host key for IP address &apos;192.30.252.130&apos; to the list of known hosts.
+Are you sure you want to continue connecting (yes/no)?&lt;输入yes&gt;
+Hi username! You&apos;ve successfully authenticated, but GitHub does not
+</code></pre><p>现在你已经可以通过SSH链接到Github了</p>
+<p>如果有问题，请再配置。参考网站</p>
+<p>生成SSH Keys</p>
+<p><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">Generating SSH Keys</a></p>
+<p>Error: Permission denied (publickey)错误</p>
+<p><a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="external">Error: Permission denied (publickey)</a></p>
+<h4 id="设置你的用户名和密码："><a href="#设置你的用户名和密码：" class="headerlink" title="设置你的用户名和密码："></a>设置你的用户名和密码：</h4><p>Git会根据用户的名字和邮箱来记录提交，GitHub也是用这些信息来做权限的处理。</p>
+<pre><code>git config --global user.name &quot;这里是你申请Github账号时的name&quot;
+git config --global user.email &quot;这里是你申请Github账号时的邮箱&quot;
+</code></pre><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>编辑 _config.yml(在你的工作目录下)，把下面的your_username换成你的github用户名</p>
+<pre><code>deploy:
+  type: git 
+  repo: https://github.com/your_username/your_username.github.io.git
+  branch: master
+</code></pre><p>执行部署命令</p>
+<pre><code>hexo d -g         hexo generate 和 hexo deploy 合写
+</code></pre><hr>
+<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><ul>
+<li>1、 部署时出现：Error: EACCES, open ‘/Users/Desktop/hexo/public/js/script.js’  </li>
+<li>原因：权限问题在部署命令前加sudo</li>
+<li>2、 deployer找不到git: ERROR Deployer not found: git</li>
+<li>解决方法:<code>npm install hexo-deployer-git --save</code></li>
+<li><p>3、</p>
+<pre><code>{ [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; }
+{ [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; }
+{ [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; }
+</code></pre><p>  解决方法：</p>
+<pre><code>npm install hexo --no-optional
+</code></pre></li>
+<li><p>4、<code>npm install</code> 卡住不动</p>
+<p>  使用<code>cnpm</code>加速<code>npm</code>原文地址:<br>  <a href="https://cnodejs.org/topic/5338c5db7cbade005b023c98" target="_blank" rel="external">https://cnodejs.org/topic/5338c5db7cbade005b023c98</a></p>
+<pre><code>npm --registry=https://registry.npm.taobao.org install koa
+</code></pre></li>
+<li><p>5、su 切换，提示：“密码不正确”；</p>
+</li>
+</ul>
+<p><a href="http://blog.csdn.net/zhangdaiscott/article/details/18666471" target="_blank" rel="external">原文地址</a></p>
+<ul>
+<li>6、问题汇总：<br><a href="http://wp.huangshiyang.com/hexo%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88" target="_blank" rel="external">非常全的问题汇总，大家可以参考下</a></li>
+</ul>
+<hr>
+<p>到此我们的博客就部署完毕，快看一下成果吧</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo搭建博客/" rel="tag">#Hexo搭建博客</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/09/27/UIPageControl的使用方法详细/" rel="next" title="UIPageControl的使用方法详细">
+                <i class="fa fa-chevron-left"></i> UIPageControl的使用方法详细
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/09/29/UITextView的使用方法详细/" rel="prev" title="UITextView的使用方法详细">
+                UITextView的使用方法详细 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="孙聚德" />
+          <p class="site-author-name" itemprop="name">孙聚德</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路总结"><span class="nav-number">3.</span> <span class="nav-text">思路总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境配置"><span class="nav-number">4.</span> <span class="nav-text">环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">4.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装node-js"><span class="nav-number">4.2.</span> <span class="nav-text">安装node.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">5.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">5.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">5.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖包"><span class="nav-number">5.3.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态页面"><span class="nav-number">5.4.</span> <span class="nav-text">生成静态页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地启动测试"><span class="nav-number">5.5.</span> <span class="nav-text">本地启动测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到Github"><span class="nav-number">6.</span> <span class="nav-text">部署到Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册Github账号"><span class="nav-number">6.1.</span> <span class="nav-text">注册Github账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建repository-仓库"><span class="nav-number">6.2.</span> <span class="nav-text">新建repository(仓库)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成SSH-Keys："><span class="nav-number">6.2.1.</span> <span class="nav-text">生成SSH Keys：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、生成SSH-Keys"><span class="nav-number">6.2.1.1.</span> <span class="nav-text">1、生成SSH Keys</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、添加你的SSH-Key到ssh-agent"><span class="nav-number">6.2.1.2.</span> <span class="nav-text">2、添加你的SSH Key到ssh-agent</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加SSH-Key到Github："><span class="nav-number">6.2.2.</span> <span class="nav-text">添加SSH Key到Github：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、添加SSH-Key"><span class="nav-number">6.2.2.1.</span> <span class="nav-text">1、添加SSH Key</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、测试能不能链接成功"><span class="nav-number">6.2.2.2.</span> <span class="nav-text">2、测试能不能链接成功</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置你的用户名和密码："><span class="nav-number">6.2.3.</span> <span class="nav-text">设置你的用户名和密码：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">6.3.</span> <span class="nav-text">部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题："><span class="nav-number">7.</span> <span class="nav-text">问题：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">孙聚德</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
