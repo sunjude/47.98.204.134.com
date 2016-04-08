@@ -69,11 +69,11 @@ Hexo是一个很好的博客，个人觉得他的界面干净利落，阅读体�
 Hexo是一个很好的博客，个人觉得他的界面干净利落，阅读体验也是很好。初次接触Hexo是在朋友的介绍下才知道的，hexo是需要手动搭建（觉得B格很高），在朋友的帮助下也终于是完成了。开篇记录一下搭建的过程希望能帮助到浏览到这里的朋友我的系统为OS X，windows也可以参考。">
 <meta property="og:image" content="http://i2.piimg.com/540ae4f79a67bfa1.png">
 <meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/hexo_repository.jpg">
-<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/47196650.jpg">
-<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/hex0_SSH%20Key.jpg">
-<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/87149726.jpg">
-<meta property="og:image" content="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/54557566.jpg">
-<meta property="og:updated_time" content="2016-04-08T15:12:48.000Z">
+<meta property="og:image" content="http://i3.piimg.com/a866c741cacf10af.png">
+<meta property="og:image" content="http://i2.piimg.com/6867706100908946.png">
+<meta property="og:image" content="http://i3.piimg.com/4614dd21ce29ef47.png">
+<meta property="og:image" content="http://i3.piimg.com/ea3165bdd678afb9.png">
+<meta property="og:updated_time" content="2016-04-08T15:21:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo--搭建属于你自己的博客">
 <meta name="twitter:description" content="安装过程中如果出现问题请到最后面查看问题总结，或许能帮助你解决问题。
@@ -321,7 +321,7 @@ folder:是指定目录的文件路径。例：/Documents/hexo
 <p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/hexo_repository.jpg" alt="add repository"></p>
 <p>在Create a new repository界面填写格式如下图所示: 用户名.github.io</p>
 <p>填写完成点Create repository创建完成</p>
-<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/47196650.jpg" alt="reposity"></p>
+<p><img src="http://i3.piimg.com/a866c741cacf10af.png" alt="reposity"></p>
 <h4 id="生成SSH-Keys："><a href="#生成SSH-Keys：" class="headerlink" title="生成SSH Keys："></a>生成SSH Keys：</h4><p>我们如何让本地git项目与远程的github建立联系？这时候就要用到SSH Keys</p>
 <h5 id="1、生成SSH-Keys"><a href="#1、生成SSH-Keys" class="headerlink" title="1、生成SSH Keys"></a>1、生成SSH Keys</h5><p>使用ssh-keygen命令生成密钥对</p>
 <pre><code>ssh-keygen -t rsa -C &quot;这里是你申请Github账号时的邮箱&quot;
@@ -329,7 +329,7 @@ folder:是指定目录的文件路径。例：/Documents/hexo
 <pre><code>Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;
 Enter same passphrase again:&lt;再次输入加密串&gt;
 </code></pre><p>（终端提示生成的文件路径）找到你生成的密钥找到<code>id_rsa.pub</code>用终端进入编辑，复制密钥。</p>
-<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/hex0_SSH%20Key.jpg" alt=""></p>
+<p><img src="http://i2.piimg.com/6867706100908946.png" alt=""></p>
 <h5 id="2、添加你的SSH-Key到ssh-agent"><a href="#2、添加你的SSH-Key到ssh-agent" class="headerlink" title="2、添加你的SSH Key到ssh-agent"></a>2、添加你的SSH Key到<a href="http://blog.csdn.net/icebergwang/article/details/13738313" target="_blank" rel="external">ssh-agent</a></h5><p>添加你的SSH Key到ssh-agent（作用：以后你再提交的过程中后台自动给你输入密码）</p>
 <pre><code>//在后台打开 ssh-agent
 eval &quot;$(ssh-agent -s)&quot;
@@ -343,9 +343,9 @@ ssh-add /var/root/.ssh/id_rsa
 看，下边是我的：
 pbcopy &lt; /var/root/.ssh/id_rsa.pub
 </code></pre><p>登陆Github,点击右侧用户按钮，选择Settings</p>
-<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/87149726.jpg" alt="SSH"></p>
+<p><img src="http://i3.piimg.com/4614dd21ce29ef47.png" alt="SSH"></p>
 <p>点击 Add SSH key 按钮，将复制的密钥粘贴到 Key 栏</p>
-<p><img src="http://7xrz9m.com1.z0.glb.clouddn.com/16-3-17/54557566.jpg" alt="Key"></p>
+<p><img src="http://i3.piimg.com/ea3165bdd678afb9.png" alt="Key"></p>
 <h5 id="2、测试能不能链接成功"><a href="#2、测试能不能链接成功" class="headerlink" title="2、测试能不能链接成功"></a>2、测试能不能链接成功</h5><p>测试</p>
 <pre><code>ssh -T git@github.com
 </code></pre><p>执行结果</p>
