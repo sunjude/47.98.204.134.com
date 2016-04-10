@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -57,15 +57,36 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="孙聚德">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="作者： @雷纯锋2011
+
+MVVM 是一种软件架构模式，它是 Martin Fowler 的 Presentation Model 的一种变体，最先由微软的架构师 John Gossman 在 2005 年提出，并应用在微软的 WPF 和 Silverlight 软件开发中。MVVM 衍生于 MVC ，是对 MVC 的一种演进，它促进了 UI 代码与业务逻辑的分离。
+说明：本文将采用理论与实践">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVVM With ReactiveCocoa">
+<meta property="og:url" content="http://yoursite.com/2016/04/10/MVVM With ReactiveCocoa/index.html">
 <meta property="og:site_name" content="孙聚德">
-<meta property="og:description">
+<meta property="og:description" content="作者： @雷纯锋2011
+
+MVVM 是一种软件架构模式，它是 Martin Fowler 的 Presentation Model 的一种变体，最先由微软的架构师 John Gossman 在 2005 年提出，并应用在微软的 WPF 和 Silverlight 软件开发中。MVVM 衍生于 MVC ，是对 MVC 的一种演进，它促进了 UI 代码与业务逻辑的分离。
+说明：本文将采用理论与实践">
+<meta property="og:image" content="http://i1.piimg.com/709ccf65af2fcd9a.png">
+<meta property="og:image" content="http://i2.piimg.com/7a6eb5736d54c10f.png">
+<meta property="og:image" content="http://i1.piimg.com/ffe42abedd02785e.png">
+<meta property="og:image" content="http://i3.piimg.com/3802a670a59395b8.png">
+<meta property="og:image" content="http://i2.piimg.com/2841d0831802a8c7.png">
+<meta property="og:image" content="http://i2.piimg.com/5008bac28eccafa0.png">
+<meta property="og:image" content="http://i3.piimg.com/9708bd1107ab7298.png">
+<meta property="og:image" content="http://i1.piimg.com/ddc3e6256277dd77.png">
+<meta property="og:image" content="http://i1.piimg.com/eb734473a11c79f1.png">
+<meta property="og:image" content="http://i3.piimg.com/53eb7da6a46df21e.jpg">
+<meta property="og:updated_time" content="2016-04-10T10:39:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="孙聚德">
-<meta name="twitter:description">
+<meta name="twitter:title" content="MVVM With ReactiveCocoa">
+<meta name="twitter:description" content="作者： @雷纯锋2011
+
+MVVM 是一种软件架构模式，它是 Martin Fowler 的 Presentation Model 的一种变体，最先由微软的架构师 John Gossman 在 2005 年提出，并应用在微软的 WPF 和 Silverlight 软件开发中。MVVM 衍生于 MVC ，是对 MVC 的一种演进，它促进了 UI 代码与业务逻辑的分离。
+说明：本文将采用理论与实践">
+<meta name="twitter:image" content="http://i1.piimg.com/709ccf65af2fcd9a.png">
 
 
 
@@ -83,7 +104,7 @@
   };
 </script>
 
-  <title> 孙聚德 </title>
+  <title> MVVM With ReactiveCocoa | 孙聚德 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -104,9 +125,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -193,9 +212,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -215,10 +234,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/04/10/MVVM With ReactiveCocoa/" itemprop="url">
-                  MVVM With ReactiveCocoa
-                </a>
+                MVVM With ReactiveCocoa
               
             
           </h1>
@@ -276,9 +292,7 @@
       
 
       
-        
-          
-            <p><img src="http://i1.piimg.com/709ccf65af2fcd9a.png" alt=""></p>
+        <p><img src="http://i1.piimg.com/709ccf65af2fcd9a.png" alt=""></p>
 <p>作者： <a href="http://weibo.com/leichunfeng?is_hot=1" target="_blank" rel="external">@雷纯锋2011</a></p>
 <hr>
 <p>MVVM 是一种软件架构模式，它是 <a href="https://en.wikipedia.org/wiki/Model–view–viewmodel" target="_blank" rel="external">Martin Fowler</a> 的 <a href="http://martinfowler.com/eaaDev/PresentationModel.html" target="_blank" rel="external">Presentation Model</a> 的一种变体，最先由微软的架构师 John Gossman 在 2005 年提出，并应用在微软的 <a href="https://en.wikipedia.org/wiki/Windows_Presentation_Foundation" target="_blank" rel="external">WPF</a> 和 <a href="https://en.wikipedia.org/wiki/Microsoft_Silverlight" target="_blank" rel="external">Silverlight</a> 软件开发中。MVVM 衍生于 <a href="https://en.wikipedia.org/wiki/Model–view–controller" target="_blank" rel="external">MVC</a> ，是对 MVC 的一种演进，它促进了 UI 代码与业务逻辑的分离。</p>
@@ -698,1083 +712,57 @@ MVVM + RAC + ViewModel-Based Navigation ，适用于全新的项目，想实践 
 <p><a href="http://cocoasamurai.blogspot.ru/2013/03/basic-mvvm-with-reactivecocoa.html" target="_blank" rel="external">http://cocoasamurai.blogspot.ru/2013/03/basic-mvvm-with-reactivecocoa.html</a></p>
 <p><a href="http://www.sprynthesis.com/2014/12/06/reactivecocoa-mvvm-introduction/" target="_blank" rel="external">http://www.sprynthesis.com/2014/12/06/reactivecocoa-mvvm-introduction/</a></p>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/01/iOS公司开发者账号申请记录/" itemprop="url">
-                  iOS公司开发者账号申请记录
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-01T21:22:52+08:00" content="2016-03-01">
-              2016-03-01
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS开发者账号/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发者账号</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
           
-
-          
-            
-          
-
-          
-
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h3 id="账号类型"><a href="#账号类型" class="headerlink" title="账号类型"></a>账号类型</h3><ul>
-<li>个人账号(individual)：个人申请用于开发苹果app所使用的账号，仅限于个人使用，申请比较容易。 $99</li>
-<li>公司账号(Company)：以公司的名义申请的开发者账号，用于公司内部的开发者共用，申请流程相对比较麻烦需要使用到邓白氏编码。最多添加100个设备UDID测试。 $99</li>
-<li>企业账号(Enterprise)：一般是公司规模在500人以上的企业，用于内部测试发布的账号，该账号发布的应用不发布在appstore上，只能企业内部使用。不限制设备的数量。 $299</li>
-<li>高校账号(University): 高校计划需要提供高校基本信息，在注册方式上苹果开发者官网有详细的流程。免费使用，不可以发布到Apple store。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/01/iOS公司开发者账号申请记录/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/01/iOS公司开发者账号申请记录/" rel="next" title="iOS公司开发者账号申请记录">
+                <i class="fa fa-chevron-left"></i> iOS公司开发者账号申请记录
+              </a>
+            
           </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/21/UIImagePicker拍照/" itemprop="url">
-                  UIImagePicker拍照
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-21T21:15:45+08:00" content="2015-12-21">
-              2015-12-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS功能篇/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS功能篇</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>关于如何使用UIImagePickerController来拍照和录制视频，下面的程序中只要将_isVideo设置为YES就是视频录制模式，录制完后在主视图控制器中自动播放；如果将_isVideo设置为NO则为拍照模式，拍照完成之后在主视图控制器中显示拍摄的照片：<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/21/UIImagePicker拍照/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/06/15/UITableViewCell的自定义以及重用/" itemprop="url">
-                  UITableViewCell的自定义以及重用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-15T20:52:44+08:00" content="2015-06-15">
-              2015-06-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS新手进阶篇/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS新手进阶篇</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在UITableView中，我们通常来展示各色各样的信息，这时，系统自带的cell形式就无法满足我们的需求了。此时，我们就需要用到自定义cell。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/15/UITableViewCell的自定义以及重用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/06/13/UITableView的编辑和移动/" itemprop="url">
-                  UITableView的编辑和移动
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-13T13:42:36+08:00" content="2015-06-13">
-              2015-06-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS新手进阶篇/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS新手进阶篇</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>上一篇记录了UITableView基本的用法，包括创建、设置代理以及代理方法的实现。这一篇来记录一下UITableView的编辑和移动。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/13/UITableView的编辑和移动/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/06/11/UITableView/" itemprop="url">
-                  UITableView
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-11T20:49:05+08:00" content="2015-06-11">
-              2015-06-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS新手进阶篇/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS新手进阶篇</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天写一下UITableView控件以及一个使用率非常高的视图控制器UITableViewController</p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>UITableView经常被用来展示一系列相似的信息，有点类似于平时所见的列表，它有两种形式，一种为UITableViewStylePlain，另一种为UITableViewStyleGrouped。其实二者没有多大差别，第二种只是在第一种的基础上按分组进行显示。我们平时常用第二种形式。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/11/UITableView/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/06/04/Xcode快捷键/" itemprop="url">
-                  Xcode快捷键
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-04T23:23:43+08:00" content="2015-06-04">
-              2015-06-04
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Xcode辅助工具/" itemprop="url" rel="index">
-                    <span itemprop="name">Xcode辅助工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>作为一名 ‘iOS开发工程师’，你应该学会熟练的使用XCode进行代码编写，所以建议大家去使用快捷键进行开发，因为：</p>
-<ol>
-<li>可以让我们显得更加的专业，逼格更高</li>
-<li>提高我们的开发效率，节省开发时间</li>
-<li>使用任何人的电脑将熟练，快速的操作（不建议大家更改系统自带的快捷按键）</li>
-</ol>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/04/Xcode快捷键/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/05/11/CocoaPosd详解/" itemprop="url">
-                  CocoaPosd详解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-05-11T21:16:01+08:00" content="2015-05-11">
-              2015-05-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Xcode辅助工具/" itemprop="url" rel="index">
-                    <span itemprop="name">Xcode辅助工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://ww4.sinaimg.cn/large/9c2363adgw1es45z04v3dj20x40li0v3.jpg" alt=""></p>
-<h3 id="CocoaPosd是什么？"><a href="#CocoaPosd是什么？" class="headerlink" title="CocoaPosd是什么？"></a>CocoaPosd是什么？</h3><p>当我们开发iOS项目时候，会经常使用到第三方类库，并且会使用很多。</p>
-<p>大家的做法基本上都是到GitHub上下载一个一个的类库，然后导入到工程中，并且引入各种的类库，做各种的配置。有时候还要处理ARC与MRC的问题，很麻烦。</p>
-<p>还有一种情况，就是当第三方类库出现升级的情况时候，我们还需要删掉旧的，下载新的，再重新导入。</p>
-<p>以上问题超级的烦人。。。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/05/11/CocoaPosd详解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/05/11/Masonry-快速上手autoLayout/" itemprop="url">
-                  Masonry:快速上手autoLayout
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-05-11T15:58:23+08:00" content="2015-05-11">
-              2015-05-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS第三方/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS第三方</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>来源：里脊串的开发随笔（在此谢过分享者）</p>
-<p>纯手写代码所经历的关于页面布局的三个时期</p>
-<pre><code>MagicNumber -&gt; autoresizingMask -&gt; autolayout
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/05/11/Masonry-快速上手autoLayout/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/04/20/MVC设计模式小节/" itemprop="url">
-                  iOS中的MVC设计模式理解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-20T17:14:35+08:00" content="2015-04-20">
-              2015-04-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>模型-视图-控制器（Model-View-Controller，MVC）是Xerox PARC在20世纪80年代为编程语言Smalltalk-80发明的一种软件设计模式，至今已广泛应用于用户交互应用程序中。在iOS开发中MVC的机制被使用的淋漓尽致，充分理解iOS的MVC模式，有助于我们程序的组织合理性。<br><img src="http://7xrz9m.com1.z0.glb.clouddn.com/MVC.png" alt="MVC"><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/04/20/MVC设计模式小节/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -1782,6 +770,10 @@ MVVM + RAC + ViewModel-Based Navigation ，适用于全新的项目，想实践 
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1801,8 +793,17 @@ MVVM + RAC + ViewModel-Based Navigation ，适用于全新的项目，想实践 
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -1854,6 +855,17 @@ MVVM + RAC + ViewModel-Based Navigation ，适用于全新的项目，想实践 
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1938,6 +950,10 @@ MVVM + RAC + ViewModel-Based Navigation ，适用于全新的项目，想实践 
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
 
   
 
