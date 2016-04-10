@@ -1,0 +1,593 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="title: 为您揭开runtime的神秘面纱 date: 2016-04-11 18:59:10 categories:
+
+Runtimetags:
+Runtime
+
+
+什么是runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="孙聚德">
+<meta property="og:url" content="http://yoursite.com/2016/04/10/为您揭开runtime的神秘面纱/index.html">
+<meta property="og:site_name" content="孙聚德">
+<meta property="og:description" content="title: 为您揭开runtime的神秘面纱 date: 2016-04-11 18:59:10 categories:
+
+Runtimetags:
+Runtime
+
+
+什么是runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时">
+<meta property="og:image" content="http://i4.piimg.com/66d573446368289b.png">
+<meta property="og:image" content="http://i4.piimg.com/9417595061af15e9.png">
+<meta property="og:image" content="http://i4.piimg.com/280371fad60328f9.png">
+<meta property="og:image" content="http://i4.piimg.com/ce9f688e16e7e8de.png">
+<meta property="og:image" content="http://i4.piimg.com/ab55a907c6cb86e3.png">
+<meta property="og:image" content="http://i4.piimg.com/1d46f5c57c1ff3e6.png">
+<meta property="og:image" content="http://i4.piimg.com/20a80daa76e76da2.png">
+<meta property="og:image" content="http://i4.piimg.com/ed28f41e52008ce8.png">
+<meta property="og:image" content="http://i4.piimg.com/68585d2e643ab3e6.png">
+<meta property="og:image" content="http://i4.piimg.com/4bff1a9f266159e8.png">
+<meta property="og:image" content="http://i4.piimg.com/60836810ec0fca24.png">
+<meta property="og:image" content="http://i4.piimg.com/40c0148380d992a4.png">
+<meta property="og:image" content="http://i4.piimg.com/2297244eab5080bd.png">
+<meta property="og:image" content="http://i4.piimg.com/09dc284cacd0f89c.png">
+<meta property="og:updated_time" content="2016-04-10T11:46:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="孙聚德">
+<meta name="twitter:description" content="title: 为您揭开runtime的神秘面纱 date: 2016-04-11 18:59:10 categories:
+
+Runtimetags:
+Runtime
+
+
+什么是runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时">
+<meta name="twitter:image" content="http://i4.piimg.com/66d573446368289b.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title>  | 孙聚德 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">孙聚德</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">今日披星戴月，明日成就梦想！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-10T19:28:49+08:00" content="2016-04-10">
+              2016-04-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p> title: 为您揭开runtime的神秘面纱<br> date: 2016-04-11 18:59:10<br> categories:</p>
+<ul>
+<li>Runtime<br>tags:</li>
+<li>Runtime</li>
+</ul>
+<hr>
+<h2 id="什么是runtime"><a href="#什么是runtime" class="headerlink" title="什么是runtime?"></a>什么是runtime?</h2><p>runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时写的OC代码,在运行过程时,都会转为runtime的C语言代码</p>
+<h2 id="runtime有什么用"><a href="#runtime有什么用" class="headerlink" title="runtime有什么用?"></a>runtime有什么用?</h2><p>如果你之前不知道runtime,可能觉得它没什么用,其实他的作用非常强大.下面我们就以代码的形式为大家揭开runtime的神秘面纱</p>
+<h5 id="作用1-获取一个类全部成员变量名-如果你的成员私有-也可以获取到"><a href="#作用1-获取一个类全部成员变量名-如果你的成员私有-也可以获取到" class="headerlink" title="作用1  获取一个类全部成员变量名(如果你的成员私有,也可以获取到)"></a>作用1  获取一个类全部成员变量名(如果你的成员私有,也可以获取到)</h5><p>我们新建一个Person类,.h代码如下 </p>
+<p><img src="http://i4.piimg.com/66d573446368289b.png" alt=""></p>
+<p>这些成员变量都是公有的,我们直接点开头文件就可以看到,如果是系统的类呢,你是不是就不知道类里面有哪些成员了,利用runtime可以轻松解决这个问题,现在我们来测试一下,记得要加 #import </p>
+<p><img src="http://i4.piimg.com/9417595061af15e9.png" alt=""></p>
+<p>打印结果:</p>
+<p><img src="http://i4.piimg.com/280371fad60328f9.png" alt=""></p>
+<p>你可以试一下,把所有的成员放到.m文件里面,它打印的结果是一样的.</p>
+<h5 id="作用2-同理-我们可以获取到一个类的全部属性名"><a href="#作用2-同理-我们可以获取到一个类的全部属性名" class="headerlink" title="作用2  同理,我们可以获取到一个类的全部属性名"></a>作用2  同理,我们可以获取到一个类的全部属性名</h5><p><img src="http://i4.piimg.com/ce9f688e16e7e8de.png" alt=""></p>
+<p>打印结果:</p>
+<p><img src="http://i4.piimg.com/ab55a907c6cb86e3.png" alt=""></p>
+<h5 id="作用3-获取一个类的全部方法"><a href="#作用3-获取一个类的全部方法" class="headerlink" title="作用3 获取一个类的全部方法:"></a>作用3 获取一个类的全部方法:</h5><p><img src="http://i4.piimg.com/1d46f5c57c1ff3e6.png" alt=""></p>
+<p>打印结果:</p>
+<p><img src="http://i4.piimg.com/20a80daa76e76da2.png" alt=""></p>
+<p>我们可以看到所有的方法</p>
+<h5 id="作用4-获取一个类遵循的所有协议"><a href="#作用4-获取一个类遵循的所有协议" class="headerlink" title="作用4 获取一个类遵循的所有协议"></a>作用4 获取一个类遵循的所有协议</h5><p>先将遵循的协议给注释掉</p>
+<p><img src="http://i4.piimg.com/ed28f41e52008ce8.png" alt=""></p>
+<p>测试代码</p>
+<p><img src="http://i4.piimg.com/68585d2e643ab3e6.png" alt=""></p>
+<p>结果啥都没有打印出来</p>
+<p><img src="http://i4.piimg.com/4bff1a9f266159e8.png" alt=""></p>
+<p>我们把遵循的代码注释给打开</p>
+<p>再执行测试代码,打印结果</p>
+<p><img src="http://i4.piimg.com/60836810ec0fca24.png" alt=""></p>
+<p>是不是很棒,你可能觉得貌似用处不太大,那接下来我们来看看如何利用runtime归档和解档。</p>
+<h5 id="作用5-归档-解档-测试如下"><a href="#作用5-归档-解档-测试如下" class="headerlink" title="作用5 归档/解档!  测试如下:"></a>作用5 归档/解档!  测试如下:</h5><p><img src="http://i4.piimg.com/40c0148380d992a4.png" alt=""></p>
+<p><img src="http://i4.piimg.com/2297244eab5080bd.png" alt=""></p>
+<p><img src="http://i4.piimg.com/09dc284cacd0f89c.png" alt=""></p>
+<p>是不是比你以前归档解档简单多了。</p>
+<p>runtime作用太大了,学习了才知道,这是我今天学习的过程和一点经验,后续我还会继续把学习的过程分享给大家,希望能给你一些帮助.</p>
+<h3 id="代码提取-epe4"><a href="#代码提取-epe4" class="headerlink" title="代码提取(epe4):"></a>代码提取(epe4):</h3><p><a href="http://pan.baidu.com/s/1c1F5jQo" target="_blank" rel="external">RuntimeDemo.zip</a></p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a href="http://www.henishuo.com/category/runtime/" target="_blank" rel="external">http://www.henishuo.com/category/runtime/</a></p>
+<p><a href="http://www.jianshu.com/p/927c8384855a" target="_blank" rel="external">http://www.jianshu.com/p/927c8384855a</a></p>
+<p><a href="http://www.jianshu.com/p/22bfb87e63d3" target="_blank" rel="external">http://www.jianshu.com/p/22bfb87e63d3</a></p>
+<p><a href="http://www.jianshu.com/p/364eab29f4f5" target="_blank" rel="external">http://www.jianshu.com/p/364eab29f4f5</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/10/MVVM With ReactiveCocoa/" rel="next" title="MVVM With ReactiveCocoa">
+                <i class="fa fa-chevron-left"></i> MVVM With ReactiveCocoa
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="孙聚德" />
+          <p class="site-author-name" itemprop="name">孙聚德</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是runtime"><span class="nav-number">1.</span> <span class="nav-text">什么是runtime?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#runtime有什么用"><span class="nav-number">2.</span> <span class="nav-text">runtime有什么用?</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作用1-获取一个类全部成员变量名-如果你的成员私有-也可以获取到"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">作用1  获取一个类全部成员变量名(如果你的成员私有,也可以获取到)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用2-同理-我们可以获取到一个类的全部属性名"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">作用2  同理,我们可以获取到一个类的全部属性名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用3-获取一个类的全部方法"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">作用3 获取一个类的全部方法:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用4-获取一个类遵循的所有协议"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">作用4 获取一个类遵循的所有协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用5-归档-解档-测试如下"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">作用5 归档/解档!  测试如下:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提取-epe4"><span class="nav-number">2.1.</span> <span class="nav-text">代码提取(epe4):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">2.2.</span> <span class="nav-text">参考：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">孙聚德</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
