@@ -57,16 +57,34 @@
 
 
 
-<meta name="description">
+<meta name="description" content="什么是Runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时写的OC代码,在运行过程时,都会转为runtime的C语言代码
+Runtime有什么用?如果你之前不知道runtime,可能觉得它没什么用,其实他的作用非常强大.下面我们就以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为您揭开Runtime的神秘面纱">
 <meta property="og:url" content="http://yoursite.com/2016/04/10/为您揭开Runtime的神秘面纱/index.html">
 <meta property="og:site_name" content="孙聚德">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-04-14T07:28:14.000Z">
+<meta property="og:description" content="什么是Runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时写的OC代码,在运行过程时,都会转为runtime的C语言代码
+Runtime有什么用?如果你之前不知道runtime,可能觉得它没什么用,其实他的作用非常强大.下面我们就以">
+<meta property="og:image" content="http://i4.piimg.com/66d573446368289b.png">
+<meta property="og:image" content="http://i4.piimg.com/9417595061af15e9.png">
+<meta property="og:image" content="http://i4.piimg.com/280371fad60328f9.png">
+<meta property="og:image" content="http://i4.piimg.com/ce9f688e16e7e8de.png">
+<meta property="og:image" content="http://i4.piimg.com/ab55a907c6cb86e3.png">
+<meta property="og:image" content="http://i4.piimg.com/1d46f5c57c1ff3e6.png">
+<meta property="og:image" content="http://i4.piimg.com/20a80daa76e76da2.png">
+<meta property="og:image" content="http://i4.piimg.com/ed28f41e52008ce8.png">
+<meta property="og:image" content="http://i4.piimg.com/68585d2e643ab3e6.png">
+<meta property="og:image" content="http://i4.piimg.com/4bff1a9f266159e8.png">
+<meta property="og:image" content="http://i4.piimg.com/60836810ec0fca24.png">
+<meta property="og:image" content="http://i4.piimg.com/40c0148380d992a4.png">
+<meta property="og:image" content="http://i4.piimg.com/2297244eab5080bd.png">
+<meta property="og:image" content="http://i4.piimg.com/09dc284cacd0f89c.png">
+<meta property="og:updated_time" content="2016-04-14T09:16:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为您揭开Runtime的神秘面纱">
-<meta name="twitter:description">
+<meta name="twitter:description" content="什么是Runtime?runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时写的OC代码,在运行过程时,都会转为runtime的C语言代码
+Runtime有什么用?如果你之前不知道runtime,可能觉得它没什么用,其实他的作用非常强大.下面我们就以">
+<meta name="twitter:image" content="http://i4.piimg.com/66d573446368289b.png">
 
 
 
@@ -272,7 +290,43 @@
       
 
       
-        
+        <h2 id="什么是Runtime"><a href="#什么是Runtime" class="headerlink" title="什么是Runtime?"></a>什么是Runtime?</h2><p>runtime直译就是运行时间,run(跑,运行) time(时间),网上大家都叫它运行时,它是一套比较底层的纯C语言API,属于一个C语言库,包含了很多底层的C语言API,它是OC的幕后工作者,我们平时写的OC代码,在运行过程时,都会转为runtime的C语言代码</p>
+<h2 id="Runtime有什么用"><a href="#Runtime有什么用" class="headerlink" title="Runtime有什么用?"></a>Runtime有什么用?</h2><p>如果你之前不知道runtime,可能觉得它没什么用,其实他的作用非常强大.下面我们就以代码的形式为大家揭开runtime的神秘面纱</p>
+<h5 id="作用1-获取一个类全部成员变量名-如果你的成员私有-也可以获取到"><a href="#作用1-获取一个类全部成员变量名-如果你的成员私有-也可以获取到" class="headerlink" title="作用1  获取一个类全部成员变量名(如果你的成员私有,也可以获取到)"></a>作用1  获取一个类全部成员变量名(如果你的成员私有,也可以获取到)</h5><p>我们新建一个Person类,.h代码如下 </p>
+<p><img src="http://i4.piimg.com/66d573446368289b.png" alt=""></p>
+<p>这些成员变量都是公有的,我们直接点开头文件就可以看到,如果是系统的类呢,你是不是就不知道类里面有哪些成员了,利用runtime可以轻松解决这个问题,现在我们来测试一下,记得要加 #import </p>
+<p><img src="http://i4.piimg.com/9417595061af15e9.png" alt=""></p>
+<p>打印结果:</p>
+<p><img src="http://i4.piimg.com/280371fad60328f9.png" alt=""></p>
+<p>你可以试一下,把所有的成员放到.m文件里面,它打印的结果是一样的.</p>
+<h5 id="作用2-同理-我们可以获取到一个类的全部属性名"><a href="#作用2-同理-我们可以获取到一个类的全部属性名" class="headerlink" title="作用2  同理,我们可以获取到一个类的全部属性名"></a>作用2  同理,我们可以获取到一个类的全部属性名</h5><p><img src="http://i4.piimg.com/ce9f688e16e7e8de.png" alt=""></p>
+<p>打印结果:</p>
+<p><img src="http://i4.piimg.com/ab55a907c6cb86e3.png" alt=""></p>
+<h5 id="作用3-获取一个类的全部方法"><a href="#作用3-获取一个类的全部方法" class="headerlink" title="作用3 获取一个类的全部方法:"></a>作用3 获取一个类的全部方法:</h5><p><img src="http://i4.piimg.com/1d46f5c57c1ff3e6.png" alt=""></p>
+<p>打印结果:</p>
+<p><img src="http://i4.piimg.com/20a80daa76e76da2.png" alt=""></p>
+<p>我们可以看到所有的方法</p>
+<h5 id="作用4-获取一个类遵循的所有协议"><a href="#作用4-获取一个类遵循的所有协议" class="headerlink" title="作用4 获取一个类遵循的所有协议"></a>作用4 获取一个类遵循的所有协议</h5><p>先将遵循的协议给注释掉</p>
+<p><img src="http://i4.piimg.com/ed28f41e52008ce8.png" alt=""></p>
+<p>测试代码</p>
+<p><img src="http://i4.piimg.com/68585d2e643ab3e6.png" alt=""></p>
+<p>结果啥都没有打印出来</p>
+<p><img src="http://i4.piimg.com/4bff1a9f266159e8.png" alt=""></p>
+<p>我们把遵循的代码注释给打开</p>
+<p>再执行测试代码,打印结果</p>
+<p><img src="http://i4.piimg.com/60836810ec0fca24.png" alt=""></p>
+<p>是不是很棒,你可能觉得貌似用处不太大,那接下来我们来看看如何利用runtime归档和解档。</p>
+<h5 id="作用5-归档-解档-测试如下"><a href="#作用5-归档-解档-测试如下" class="headerlink" title="作用5 归档/解档!  测试如下:"></a>作用5 归档/解档!  测试如下:</h5><p><img src="http://i4.piimg.com/40c0148380d992a4.png" alt=""></p>
+<p><img src="http://i4.piimg.com/2297244eab5080bd.png" alt=""></p>
+<p><img src="http://i4.piimg.com/09dc284cacd0f89c.png" alt=""></p>
+<p>是不是比你以前归档解档简单多了。</p>
+<p>runtime作用太大了,学习了才知道,这是我今天学习的过程和一点经验,后续我还会继续把学习的过程分享给大家,希望能给你一些帮助.</p>
+<h3 id="代码提取-epe4"><a href="#代码提取-epe4" class="headerlink" title="代码提取(epe4):"></a>代码提取(epe4):</h3><p><a href="http://pan.baidu.com/s/1c1F5jQo" target="_blank" rel="external">RuntimeDemo.zip</a></p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a href="http://www.henishuo.com/category/runtime/" target="_blank" rel="external">http://www.henishuo.com/category/runtime/</a></p>
+<p><a href="http://www.jianshu.com/p/927c8384855a" target="_blank" rel="external">http://www.jianshu.com/p/927c8384855a</a></p>
+<p><a href="http://www.jianshu.com/p/22bfb87e63d3" target="_blank" rel="external">http://www.jianshu.com/p/22bfb87e63d3</a></p>
+<p><a href="http://www.jianshu.com/p/364eab29f4f5" target="_blank" rel="external">http://www.jianshu.com/p/364eab29f4f5</a></p>
+
       
     </div>
     
@@ -423,7 +477,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Runtime"><span class="nav-number">1.</span> <span class="nav-text">什么是Runtime?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime有什么用"><span class="nav-number">2.</span> <span class="nav-text">Runtime有什么用?</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作用1-获取一个类全部成员变量名-如果你的成员私有-也可以获取到"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">作用1  获取一个类全部成员变量名(如果你的成员私有,也可以获取到)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用2-同理-我们可以获取到一个类的全部属性名"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">作用2  同理,我们可以获取到一个类的全部属性名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用3-获取一个类的全部方法"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">作用3 获取一个类的全部方法:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用4-获取一个类遵循的所有协议"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">作用4 获取一个类遵循的所有协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#作用5-归档-解档-测试如下"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">作用5 归档/解档!  测试如下:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提取-epe4"><span class="nav-number">2.1.</span> <span class="nav-text">代码提取(epe4):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考："><span class="nav-number">2.2.</span> <span class="nav-text">参考：</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
